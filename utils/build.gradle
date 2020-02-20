@@ -3,6 +3,12 @@
 apply plugin: 'com.android.library'
 apply from: "../shared.gradle"
 
+android {
+    defaultConfig {
+        targetSdkVersion 28
+    }
+}
+
 dependencies {
     implementation project(':proguard')  // Only exists in github repo.
     implementation project(':lib_utils_log')
