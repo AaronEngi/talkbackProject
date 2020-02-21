@@ -45,6 +45,7 @@ import android.provider.Settings;
 import androidx.annotation.VisibleForTesting;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -521,6 +522,7 @@ public class TalkBackService extends AccessibilityService
 
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event) {
+//    Log.d(TAG, "onAccessibilityEvent() called with: event = [" + event + "]");
     Performance perf = Performance.getInstance();
     EventId eventId = perf.onEventReceived(event);
     accessibilityEventProcessor.onAccessibilityEvent(event, eventId);
